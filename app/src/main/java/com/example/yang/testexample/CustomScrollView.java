@@ -34,21 +34,21 @@ public class CustomScrollView extends ScrollView {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        travelTree1(this);
-        for (View view : mChildViews) {
-            if (view != null && view instanceof ListView) {
-                int x = (int) ev.getRawX();
-                int y = (int) ev.getRawY();
-//            Log.d("my-log", "touch point   x is  " + x +"  and y is : " + y);
-//            Log.d("my-log", "childView width is  " + childView.getWidth() +"  and height is : " + childView.getHeight());
-                if (isTouchPointInView(view, x, y)) {
-                    Log.d("my-log", "CustomScrollView dispatchTouchEvent  touch on listview   not intercept");
-                }else {
-                    Log.d("my-log", "CustomScrollView  touch out of listview  intercept ");
-                    return true;
-                }
-            }
-        }
+//        travelTree1(this);
+//        for (View view : mChildViews) {
+//            if (view != null && view instanceof ListView) {
+//                int x = (int) ev.getRawX();
+//                int y = (int) ev.getRawY();
+////            Log.d("my-log", "touch point   x is  " + x +"  and y is : " + y);
+////            Log.d("my-log", "childView width is  " + childView.getWidth() +"  and height is : " + childView.getHeight());
+//                if (isTouchPointInView(view, x, y)) {
+//                    Log.d("my-log", "CustomScrollView dispatchTouchEvent  touch on listview   not intercept");
+//                }else {
+//                    Log.d("my-log", "CustomScrollView  touch out of listview  intercept ");
+//                    return super.dispatchTouchEvent(ev);
+//                }
+//            }
+//        }
         return super.dispatchTouchEvent(ev);
     }
 
