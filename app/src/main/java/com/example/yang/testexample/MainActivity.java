@@ -2,6 +2,7 @@ package com.example.yang.testexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
         mListView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                Log.d("my-log", "call onTouch");
                 if(event.getAction() == MotionEvent.ACTION_UP){
-                    mListView.requestDisallowInterceptTouchEvent(false);
+//                    Log.d("my-log", "listview process touch event ");
+//                    mListView.requestDisallowInterceptTouchEvent(false);
                 }else{
-                    mListView.requestDisallowInterceptTouchEvent(true);
+//                    mListView.requestDisallowInterceptTouchEvent(true);
+//                    Log.d("my-log", "scroll intercept touch event");
                 }
                 return false;
             }

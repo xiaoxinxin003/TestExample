@@ -25,9 +25,19 @@ public class CustomListView extends ListView {
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        getParent().requestDisallowInterceptTouchEvent(false);
-        return super.onInterceptTouchEvent(ev);
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+//        getParent().requestDisallowInterceptTouchEvent(false);
+        Log.d("my-log", "call listview onIntercept Touch event");
+//        if(event.getAction() == MotionEvent.ACTION_UP){
+//                    Log.d("my-log", "listview process touch event ");
+//            this.requestDisallowInterceptTouchEvent(false);
+//        }else{
+//            this.requestDisallowInterceptTouchEvent(true);
+//                    Log.d("my-log", "scroll intercept touch event");
+//        }
+        this.requestDisallowInterceptTouchEvent(true);
+//        return false;
+        return super.onInterceptTouchEvent(event);
     }
 
     @Override
@@ -35,11 +45,11 @@ public class CustomListView extends ListView {
         int x = (int) ev.getRawX();
         int y = (int) ev.getRawY();
         if (isTouchPointInView(this, x, y)) {
-            Log.d("my-log", "listview  onTouchEvent  is touch on listView request parent not intercept");
+//            Log.d("my-log", "listview  onTouchEvent  is touch on listView request parent not intercept");
 //            getParent().requestDisallowInterceptTouchEvent(false);
         }else {
 //            getParent().requestDisallowInterceptTouchEvent(true);
-            Log.d("my-log", "listview  onTouchEvent  touch out of listview ");
+//            Log.d("my-log", "listview  onTouchEvent  touch out of listview ");
         }
         return super.onTouchEvent(ev);
     }
@@ -47,6 +57,7 @@ public class CustomListView extends ListView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 //        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+//        super.onMeasure(widthMeasureSpec, expandSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
