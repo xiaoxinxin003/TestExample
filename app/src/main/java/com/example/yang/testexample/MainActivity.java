@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] data = {"Apple", "Orange", "Pear", "Cherry"};
+    private String[] data = {"Apple", "Orange", "Pear", "Cherry", "Banana", "Pitch",
+            "Water", "Bread", "Han", "Europe", "China", "Japan", "India", "Thailand" ,
+            "Orange", "Pear", "Cherry", "Banana", "Pitch",
+            "Water", "Bread", "Han", "Europe", "China", "Japan", "India", "Thailand"};
     private CustomListView mListView;
 
     @Override
@@ -24,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, "you clicked item " + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
